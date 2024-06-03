@@ -2,7 +2,7 @@ import {
   RouteRecordRaw,
   Router,
   createRouter,
-  createWebHistory,
+  createWebHashHistory,
 } from "vue-router";
 
 export class RouterModule {
@@ -13,7 +13,7 @@ export class RouterModule {
 
   install() {
     this.router = createRouter({
-      history: createWebHistory(import.meta.env.VITE_BASE_URL),
+      history: createWebHashHistory(import.meta.env.VITE_BASE_URL),
       routes: [],
     });
   }
