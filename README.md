@@ -26,6 +26,7 @@ https://coldrun.notion.site/Frontend-Developer-8711ae4667a14afba4b506fe3a6a44b8
 ## Build Setup
 
 ```bash
+# node version v20.11.0
 # install dependencies
 npm install
 
