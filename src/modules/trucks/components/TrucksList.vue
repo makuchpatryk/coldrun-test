@@ -5,7 +5,7 @@
     showGridlines
     editMode="cell"
     paginator
-    :rows="15"
+    :rows="params.limit"
     dataKey="id"
     v-model:filters="filters"
     filterDisplay="row"
@@ -182,7 +182,8 @@ const {
   confirmDeleteTruck,
   getStatuses,
 } = useTrucksStore();
-const { result, filters, totalRecords, isLoading, statuses } = toRefs(state);
+const { result, filters, totalRecords, isLoading, statuses, params } =
+  toRefs(state);
 
 onBeforeMount(async () => {
   setState("isLoading", true);
