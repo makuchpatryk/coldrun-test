@@ -66,6 +66,11 @@ export const useTrucksStore = defineStore("trucks", () => {
 
     const { loading } = await useFetch<ITruck[] | null>({
       url: `${import.meta.env.VITE_API_URL}trucks?${urlParams.toString()}`,
+      options: {
+        headers: {
+          Accept: "application/json",
+        },
+      },
       customResponseCallback: async (res: Response) => {
         state.totalRecords = Number(res.headers.get("x-total-count"));
         state.result = await res.json();
